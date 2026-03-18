@@ -11,7 +11,7 @@ public class Exercicio9 extends BaseExercicio {
         String codigo = "float valor = num1 + (num2 * 10);";
         System.out.println("A string analisada é: " + codigo);
 
-        // 1. Definição dos padrões (Nomes de grupos curtos e sem caracteres especiais complexos)
+        //  Definição dos padrões 
         Map<String, String> token = new LinkedHashMap<>();
         token.put("RESERVADA", "\\b(int|float|if|else|while)\\b");
         token.put("NUMERO", "\\d+");
@@ -19,7 +19,7 @@ public class Exercicio9 extends BaseExercicio {
         token.put("OPERADOR", "[+\\-*/=]");
         token.put("DELIMITADOR", "[;()]");
 
-        // 2. Construção da Regex
+        //  Construção da Regex
         StringBuilder regexBuilder = new StringBuilder();
         for (String nome : token.keySet()) {
             // Criamos grupos nomeados: (?<RESERVADA>\b(int|float|...)\b)
@@ -30,12 +30,11 @@ public class Exercicio9 extends BaseExercicio {
         Pattern pattern = Pattern.compile(regexBuilder.substring(1));
         Matcher matcher = pattern.matcher(codigo);
 
-        // 3. Varredura
+        //  Varredura
         System.out.println("\n--- Resultado da Análise Léxica ---");
         while (matcher.find()) {
             for (String nome : token.keySet()) {
                 if (matcher.group(nome) != null) {
-                    // Ajuste para exibição bonita
                     String label = nome.equals("RESERVADA") ? "PALAVRA_RESERVADA" : nome;
                     System.out.println(label + " → " + matcher.group(nome));
                     break;
