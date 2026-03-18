@@ -8,7 +8,6 @@ public class Exercicio8 extends BaseExercicio {
     public void executar() {
         String texto = "Cliente: João Silva\nCelular: (67) 99876-1234";
 
-        // Expressão regular para celular
         String regex = "(\\([0-9]{2}\\)) (9)([0-9]{4})(\\-[0-9]{4})";
 
         Pattern pattern = Pattern.compile(regex);

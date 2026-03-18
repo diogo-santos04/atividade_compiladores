@@ -5,10 +5,9 @@ import java.util.regex.Pattern;
 
 public class Exercicio7 extends BaseExercicio {
     @Override
-    public void executar(){
-         String texto = "Cliente: João Silva\nCPF: 123.432.343-23";
+    public void executar() {
+        String texto = "Cliente: João Silva\nCPF: 123.432.343-23";
 
-        // Expressão regular para CPF
         String regex = "(\\d{3})\\.(\\d{3})\\.(\\d{3})-(\\d{2})";
 
         Pattern pattern = Pattern.compile(regex);

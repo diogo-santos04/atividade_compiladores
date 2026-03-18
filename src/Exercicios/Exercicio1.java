@@ -8,7 +8,6 @@ public class Exercicio1 extends BaseExercicio {
     public void executar() {
         String texto = "12a345";
 
-        // Expressão regular: apenas números
         String regex = "^[0-9]+$";
 
         Pattern pattern = Pattern.compile(regex);
